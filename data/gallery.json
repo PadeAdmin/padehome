@@ -1,3 +1,14 @@
 {
-  "items": []
+  "items": [
+    {
+      "title": "師子會",
+      "date": "2026-07-03",
+      "desc": "師子會捐物資",
+      "cover": "/images/uploads/DSC_0972.JPG",
+      "photos": [
+        "/images/uploads/DSC_1077.JPG",
+        "/images/uploads/DSC_1078.JPG"
+      ]
+    }
+  ]
 }
