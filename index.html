@@ -18,18 +18,20 @@
 
   <a href="#about" class="skip-link">跳過導覽，進入主要內容</a>
 
+  <!-- ── 導覽列 ── -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="八德教養院首頁">
+      <a href="index.html" class="logo" aria-label="八德教養院首頁">
         <span class="logo-mark" aria-hidden="true">八德</span>
         <span class="logo-text">教養院</span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="主要導覽">
         <a href="#about">關於我們</a>
         <a href="#services">服務內容</a>
-        <a href="#values">我們重視的事</a>
-        <a href="#gallery">環境與活動</a>
-        <a href="#news">最新消息</a>
+        <a href="campus.html">院區介紹</a>
+        <a href="gallery.html">活動花絮</a>
+        <a href="news.html">最新消息</a>
+        <a href="donate.html">捐款徵信</a>
         <a href="#contact" class="nav-cta">聯絡我們</a>
       </nav>
       <button class="menu-toggle" id="menu-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
@@ -48,35 +50,37 @@
       <nav aria-label="手機版導覽">
         <a href="#about">關於我們</a>
         <a href="#services">服務內容</a>
-        <a href="#values">我們重視的事</a>
-        <a href="#gallery">環境與活動</a>
-        <a href="#news">最新消息</a>
+        <a href="campus.html">院區介紹</a>
+        <a href="gallery.html">活動花絮</a>
+        <a href="news.html">最新消息</a>
+        <a href="donate.html">捐款徵信</a>
         <a href="#contact">聯絡我們</a>
       </nav>
     </div>
   </header>
 
   <main>
+
+    <!-- ── Hero ── -->
     <section class="hero" id="hero" aria-label="首頁主視覺">
-      <div class="hero-bg" aria-hidden="true">
+      <div class="hero-bg" aria-hidden="true" id="hero-bg">
         <div class="hero-circle hero-circle--1"></div>
         <div class="hero-circle hero-circle--2"></div>
         <div class="hero-circle hero-circle--3"></div>
       </div>
       <div class="container hero-content fade-in">
         <div class="hero-badge">桃園市立案機構</div>
-        <h1 class="hero-title">八德教養院</h1>
-        <p class="hero-subtitle">以專業照顧與溫暖陪伴，<br class="mobile-br" />支持每一位服務對象<br />安心生活、穩定成長。</p>
+        <h1 class="hero-title" id="hero-title">八德教養院</h1>
+        <p class="hero-subtitle" id="hero-subtitle">以專業照顧與溫暖陪伴，<br class="mobile-br" />支持每一位服務對象<br />安心生活、穩定成長。</p>
         <div class="hero-actions">
           <a href="#about" class="btn btn--primary">認識我們</a>
           <a href="#contact" class="btn btn--outline">聯絡我們</a>
         </div>
       </div>
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span></span>
-      </div>
+      <div class="hero-scroll-hint" aria-hidden="true"><span></span></div>
     </section>
 
+    <!-- ── 關於我們 ── -->
     <section class="section section--about" id="about" aria-labelledby="about-heading">
       <div class="container">
         <div class="section-header fade-in">
@@ -85,9 +89,12 @@
         </div>
         <div class="about-layout fade-in">
           <div class="about-text">
-            <p class="about-lead">八德教養院提供身心障礙者住宿照顧與生活支持服務，秉持「以人為本」的理念，為服務對象建立安全、穩定、有尊嚴的生活環境。</p>
+            <p class="about-lead" id="about-intro">八德教養院提供身心障礙者住宿照顧與生活支持服務，秉持「以人為本」的理念，為服務對象建立安全、穩定、有尊嚴的生活環境。</p>
             <p>本院由教保、社工、護理及復健等跨專業人員組成服務團隊，依每位服務對象需求訂定個別化服務計畫（ISP），並定期檢視調整，確保服務切合實際。</p>
             <p>我們重視與家屬的溝通合作，亦積極參與社區融合活動，讓服務對象的支持網絡延伸至機構以外。</p>
+            <div style="margin-top: var(--space-8);">
+              <a href="campus.html" class="btn btn--outline">參觀院區環境 →</a>
+            </div>
           </div>
           <div class="about-stats">
             <div class="stat-card">
@@ -107,6 +114,7 @@
       </div>
     </section>
 
+    <!-- ── 服務內容 ── -->
     <section class="section section--services" id="services" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-header fade-in">
@@ -125,7 +133,6 @@
             <h3>生活照顧</h3>
             <p>協助服務對象處理飲食、清潔、睡眠與個人衛生等日常事項，維持規律穩定的生活作息。</p>
           </div>
-
           <div class="service-card fade-in">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,7 +143,6 @@
             <h3>教保支持</h3>
             <p>教保員依據 ISP 規劃學習活動與生活技能訓練，協助服務對象提升自我照顧能力與生活自主性。</p>
           </div>
-
           <div class="service-card fade-in">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,7 +153,6 @@
             <h3>社工服務</h3>
             <p>定期評估服務對象需求，協助申請福利資源，並作為家屬與機構溝通的橋樑。</p>
           </div>
-
           <div class="service-card fade-in">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +163,6 @@
             <h3>健康照護</h3>
             <p>護理團隊執行定期健檢、慢性病管理與急症處理，並協調轉介外部醫療資源。</p>
           </div>
-
           <div class="service-card fade-in">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,7 +173,6 @@
             <h3>活動參與</h3>
             <p>規劃藝術創作、音樂律動、戶外體驗及節慶活動，豐富服務對象的日常生活與身心健康。</p>
           </div>
-
           <div class="service-card fade-in">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -177,144 +180,94 @@
                 <path d="M32 26c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8 8 3.6 8 8zm-8-6c-.8 0-1.5.1-2.2.3l8 8c.2-.7.3-1.4.3-2.2C30 23.1 27.3 20 24 20zm-5.8 1.8C17.1 22.9 16 24.3 16 26c0 3.3 2.7 6 6 6 1.7 0 3.1-.6 4.2-1.6l-8-8z" fill="currentColor"/>
               </svg>
             </div>
-            <h3>家屬與社區連結</h3>
-            <p>定期舉辦家屬座談及訪視，並積極推動社區融合，讓服務支持延伸至機構以外。</p>
+            <h3>復健支持</h3>
+            <p>物理治療師與職能治療師提供個別化復健計畫，協助維持與提升服務對象的身體功能。</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ── 我們重視的事 ── -->
     <section class="section section--values" id="values" aria-labelledby="values-heading">
       <div class="container">
         <div class="section-header fade-in">
           <span class="section-eyebrow">我們重視的事</span>
-          <h2 id="values-heading">照顧的核心，從不改變</h2>
+          <h2 id="values-heading">四項核心價值</h2>
         </div>
         <div class="values-grid">
           <div class="value-item fade-in">
-            <div class="value-num" aria-hidden="true">01</div>
+            <div class="value-num">01</div>
             <div class="value-content">
-              <h3>尊重每一位服務對象</h3>
-              <p>每位服務對象都有其獨特需求與感受。我們在每一個照顧決策中，維護其尊嚴與自主意願。</p>
+              <h3>尊嚴與自主</h3>
+              <p>尊重每位服務對象的個體差異與自主意願，提供符合個人需求的支持，而非單一化的照顧模式。</p>
             </div>
           </div>
-
           <div class="value-item fade-in">
-            <div class="value-num" aria-hidden="true">02</div>
+            <div class="value-num">02</div>
             <div class="value-content">
-              <h3>穩定且安全的生活環境</h3>
-              <p>提供規律、可預期的生活結構，讓服務對象在安全感中建立信任，感受到真正屬於自己的家。</p>
+              <h3>專業與溫暖</h3>
+              <p>結合跨專業團隊的專業知能與真誠的人文關懷，讓服務對象在安心的環境中穩定生活。</p>
             </div>
           </div>
-
           <div class="value-item fade-in">
-            <div class="value-num" aria-hidden="true">03</div>
+            <div class="value-num">03</div>
             <div class="value-content">
-              <h3>跨專業團隊合作</h3>
-              <p>教保、社工、護理、復健各專業整合協作，共同擬定服務計畫，確保每位服務對象獲得全面支持。</p>
+              <h3>家庭與夥伴</h3>
+              <p>重視與家屬的溝通合作，視家庭為服務的重要夥伴，共同為服務對象的生活品質努力。</p>
             </div>
           </div>
-
           <div class="value-item fade-in">
-            <div class="value-num" aria-hidden="true">04</div>
+            <div class="value-num">04</div>
             <div class="value-content">
-              <h3>持續改善服務品質</h3>
-              <p>定期檢視服務成效，蒐集家屬與服務對象的回饋意見，作為調整與精進的依據。</p>
+              <h3>社區與融合</h3>
+              <p>積極推動社區融合，讓服務對象有機會參與社會生活，拓展生命的廣度與深度。</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--gallery" id="gallery" aria-labelledby="gallery-heading">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-eyebrow">環境與活動</span>
-          <h2 id="gallery-heading">日常生活的每一刻</h2>
-          <p class="section-desc">院區環境與各項活動紀錄，照片將陸續更新。</p>
-        </div>
-        <div class="gallery-grid fade-in">
-          <div class="gallery-item gallery-item--large" data-caption="生活環境">
-            <div class="photo-placeholder" role="img" aria-label="院區生活環境照片（待更新）">
-              <span>院區環境</span>
-            </div>
-          </div>
-          <div class="gallery-item" data-caption="藝術活動">
-            <div class="photo-placeholder" role="img" aria-label="藝術活動照片（待更新）">
-              <span>藝術活動</span>
-            </div>
-          </div>
-          <div class="gallery-item" data-caption="戶外體驗">
-            <div class="photo-placeholder" role="img" aria-label="戶外體驗照片（待更新）">
-              <span>戶外體驗</span>
-            </div>
-          </div>
-          <div class="gallery-item" data-caption="節慶慶典">
-            <div class="photo-placeholder" role="img" aria-label="節慶慶典照片（待更新）">
-              <span>節慶慶典</span>
-            </div>
-          </div>
-          <div class="gallery-item" data-caption="音樂律動">
-            <div class="photo-placeholder" role="img" aria-label="音樂律動照片（待更新）">
-              <span>音樂律動</span>
-            </div>
-          </div>
-          <div class="gallery-item" data-caption="家屬探視">
-            <div class="photo-placeholder" role="img" aria-label="家屬探視照片（待更新）">
-              <span>家屬探視</span>
-            </div>
-          </div>
-        </div>
-        <p class="gallery-note fade-in">※ 照片更新中，實際活動內容依現況為準。</p>
-      </div>
-    </section>
-
-    <section class="section section--news" id="news" aria-labelledby="news-heading">
+    <!-- ── 最新消息預覽 ── -->
+    <section class="section section--news-preview" id="news-preview" aria-labelledby="news-preview-heading">
       <div class="container">
         <div class="section-header fade-in">
           <span class="section-eyebrow">最新消息</span>
-          <h2 id="news-heading">院內動態</h2>
+          <h2 id="news-preview-heading">院內動態</h2>
         </div>
-        <div class="news-list fade-in">
-          <article class="news-item">
-            <div class="news-meta">
-              <time datetime="2026">2026 年</time>
-              <span class="news-tag">公告</span>
-            </div>
-            <div class="news-body">
-              <h3>官網形象頁建置中</h3>
-              <p>官方網站正式啟動建置，後續將陸續更新院務資訊、活動紀錄與服務說明。</p>
-            </div>
-            <div class="news-arrow" aria-hidden="true">→</div>
+        <div class="news-list fade-in" id="news-preview-list">
+          <!-- 由 JS 從 data/news/ 動態載入最新3則 -->
+          <article class="news-item news-skeleton">
+            <div class="news-meta"><div class="skeleton-line" style="width:60px"></div></div>
+            <div class="news-body"><div class="skeleton-line" style="width:80%"></div></div>
           </article>
-
-          <article class="news-item">
-            <div class="news-meta">
-              <time datetime="2026">2026 年</time>
-              <span class="news-tag">活動</span>
-            </div>
-            <div class="news-body">
-              <h3>院內活動紀錄更新</h3>
-              <p>近期藝術創作、音樂體驗及節慶慶典活動圓滿舉辦，服務對象參與踴躍，照片將陸續上傳。</p>
-            </div>
-            <div class="news-arrow" aria-hidden="true">→</div>
-          </article>
-
-          <article class="news-item">
-            <div class="news-meta">
-              <time datetime="2026">2026 年</time>
-              <span class="news-tag">服務</span>
-            </div>
-            <div class="news-body">
-              <h3>服務資訊整理中</h3>
-              <p>各項服務說明、入住資格與申請流程等資訊彙整中，完成後將在本站公告，急需協助請直接來電。</p>
-            </div>
-            <div class="news-arrow" aria-hidden="true">→</div>
-          </article>
+        </div>
+        <div class="section-more fade-in">
+          <a href="news.html" class="btn btn--outline">查看所有消息 →</a>
         </div>
       </div>
     </section>
 
+    <!-- ── 活動花絮預覽 ── -->
+    <section class="section section--gallery-preview" id="gallery-preview" aria-labelledby="gallery-preview-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-eyebrow">活動花絮</span>
+          <h2 id="gallery-preview-heading">近期活動紀錄</h2>
+          <p class="section-desc">記錄每一個精彩時刻，感謝所有參與的服務對象與工作夥伴。</p>
+        </div>
+        <div class="gallery-preview-grid fade-in" id="gallery-preview-grid">
+          <!-- 由 JS 動態載入最新相簿封面 -->
+          <div class="gallery-preview-placeholder">
+            <span>活動照片更新中</span>
+          </div>
+        </div>
+        <div class="section-more fade-in">
+          <a href="gallery.html" class="btn btn--outline">查看更多活動 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 聯絡我們 ── -->
     <section class="section section--contact" id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header fade-in">
@@ -323,61 +276,59 @@
           <p class="section-desc">如有服務諮詢或入住申請相關問題，歡迎來電或來信洽詢。</p>
         </div>
         <div class="contact-layout fade-in">
-          <div class="contact-info">
+          <div class="contact-info" id="contact-info">
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
               </div>
               <div>
                 <div class="contact-label">地址</div>
-                <div class="contact-value">334桃園市八德區福元里建國路38號</div>
+                <div class="contact-value" id="contact-address">(334)桃園市八德區建國路38號</div>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
               </div>
               <div>
                 <div class="contact-label">電話</div>
-                <div class="contact-value"><a href="tel:+88633685263">03-3685263</a></div>
+                <div class="contact-value"><a href="tel:+88633685263" id="contact-phone">03-3685263</a></div>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
               </div>
               <div>
                 <div class="contact-label">電子郵件</div>
-                <div class="contact-value"><a href="mailto:00526@pade.org.tw">00526@pade.org.tw</a></div>
+                <div class="contact-value"><a href="mailto:00526@pade.org.tw" id="contact-email">00526@pade.org.tw</a></div>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="currentColor"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="currentColor"/></svg>
               </div>
               <div>
                 <div class="contact-label">服務時間</div>
-                <div class="contact-value">週一至週五 08:00–17:00</div>
+                <div class="contact-value" id="contact-hours">週一至週五 08:00–17:00</div>
+              </div>
+            </div>
+            <!-- 捐款帳號快速連結 -->
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z" fill="currentColor"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">捐款支持</div>
+                <div class="contact-value"><a href="donate.html">查看捐款帳號 →</a></div>
               </div>
             </div>
           </div>
-
           <div class="map-placeholder" role="region" aria-label="八德教養院地圖">
-            <iframe 
-              src="https://maps.google.com/maps?q=334桃園市八德區建國路38號&hl=zh-TW&z=16&output=embed" 
-              width="100%" 
-              height="100%" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
+            <iframe
+              src="https://maps.google.com/maps?q=334桃園市八德區建國路38號&hl=zh-TW&z=16&output=embed"
+              width="100%" height="100%" style="border:0;"
+              allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="八德教養院地圖">
             </iframe>
@@ -385,6 +336,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -394,17 +346,20 @@
         <span class="logo-text">教養院</span>
       </div>
       <div class="footer-info">
-        <p>© 八德教養院 版權所有</p>
-        <p class="footer-note">網站建置中｜資訊將陸續更新</p>
+        <p>© 財團法人私立八德教養院 版權所有</p>
+        <p class="footer-note">(334)桃園市八德區建國路38號　Tel: 03-3685263</p>
       </div>
       <div class="footer-links">
         <a href="#about">關於我們</a>
-        <a href="#services">服務內容</a>
+        <a href="campus.html">院區介紹</a>
+        <a href="news.html">最新消息</a>
+        <a href="donate.html">捐款徵信</a>
         <a href="#contact">聯絡我們</a>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

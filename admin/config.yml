@@ -1,0 +1,135 @@
+backend:
+  name: github
+  repo: PadeAdmin/padehome
+  branch: main
+  # base_url: https://你的worker網址.workers.dev   ← 上線前補上，本機測試先留空
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+locale: zh_Hant
+
+collections:
+
+  # ──────────────────────────────
+  # 1. 最新消息（單一 JSON 檔，list 模式）
+  # ──────────────────────────────
+  - name: news
+    label: 最新消息
+    files:
+      - name: news_list
+        label: 消息列表
+        file: data/news.json
+        fields:
+          - name: items
+            label: 消息
+            widget: list
+            summary: "{{fields.title}} ({{fields.date}})"
+            fields:
+              - { name: title,   label: 標題, widget: string }
+              - { name: date,    label: 日期, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - name: tag
+                label: 類型
+                widget: select
+                options: [公告, 活動, 服務, 其他]
+                default: 公告
+              - { name: summary, label: 摘要（列表預覽，50字內）, widget: text }
+              - { name: body,    label: 內文, widget: markdown }
+              - name: images
+                label: 照片（可多張）
+                widget: list
+                required: false
+                field:
+                  { name: image, label: 照片, widget: image }
+
+  # ──────────────────────────────
+  # 2. 活動花絮（單一 JSON 檔，list 模式）
+  # ──────────────────────────────
+  - name: gallery
+    label: 活動花絮
+    files:
+      - name: gallery_list
+        label: 相簿列表
+        file: data/gallery.json
+        fields:
+          - name: items
+            label: 相簿
+            widget: list
+            summary: "{{fields.title}} ({{fields.date}})"
+            fields:
+              - { name: title, label: 活動名稱, widget: string }
+              - { name: date,  label: 活動日期, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { name: desc,  label: 活動說明（簡短）, widget: text, required: false }
+              - { name: cover, label: 封面照片, widget: image }
+              - name: photos
+                label: 活動照片（可批次上傳）
+                widget: list
+                field:
+                  { name: photo, label: 照片, widget: image }
+
+  # ──────────────────────────────
+  # 3. 院區介紹
+  # ──────────────────────────────
+  - name: campus
+    label: 院區介紹
+    files:
+      - name: campus_list
+        label: 兩個院區資料
+        file: data/campus.json
+        fields:
+          - name: campuses
+            label: 院區列表
+            widget: list
+            fields:
+              - { name: name,    label: 院區名稱, widget: string }
+              - { name: address, label: 地址,     widget: string }
+              - { name: phone,   label: 電話,     widget: string }
+              - { name: intro,   label: 介紹文字, widget: text }
+              - name: photos
+                label: 院區照片（3～5張）
+                widget: list
+                field:
+                  { name: photo, label: 照片, widget: image }
+
+  # ──────────────────────────────
+  # 4. 捐款徵信
+  # ──────────────────────────────
+  - name: donate
+    label: 捐款徵信
+    files:
+      - name: donate_info
+        label: 捐款資訊
+        file: data/donate.json
+        fields:
+          - name: accounts
+            label: 捐款帳號
+            widget: list
+            fields:
+              - { name: bank,    label: 銀行／郵局名稱, widget: string }
+              - { name: account, label: 帳號,           widget: string }
+              - { name: name,    label: 戶名,           widget: string }
+          - name: reports
+            label: 徵信公告（可多期）
+            widget: list
+            fields:
+              - { name: title, label: 期別名稱（如：2024年度捐款徵信）, widget: string }
+              - { name: date,  label: 公告日期, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { name: file,  label: 徵信檔案（PDF 或 Excel）, widget: file }
+
+  # ──────────────────────────────
+  # 5. 網站基本資料
+  # ──────────────────────────────
+  - name: site
+    label: 網站基本資料
+    files:
+      - name: site_info
+        label: 基本資料
+        file: data/site.json
+        fields:
+          - { name: intro,      label: 機構簡介（首頁用）,          widget: text }
+          - { name: phone,      label: 聯絡電話,                    widget: string }
+          - { name: email,      label: 電子郵件,                    widget: string }
+          - { name: address,    label: 院所地址,                    widget: string }
+          - { name: hours,      label: 服務時間,                    widget: string }
+          - { name: hero_image, label: 首頁大圖（留空則用預設背景）, widget: image, required: false }
+          - { name: hero_title, label: 首頁標語（留空用預設文字）,   widget: string, required: false }

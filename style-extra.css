@@ -1,0 +1,665 @@
+/* ============================================================
+   style-extra.css
+   新頁面擴充樣式（接在 style.css 之後，或合併至 style.css 底部）
+   ============================================================ */
+
+/* ── 導覽列：當前頁面高亮 ── */
+.main-nav .nav-active {
+  color: var(--color-primary);
+  background: var(--color-primary-lt);
+}
+
+/* ── 頁首 Banner（各子頁通用） ── */
+.page-banner {
+  background: var(--color-primary);
+  padding: calc(68px + var(--space-16)) 0 var(--space-16);
+  text-align: center;
+}
+
+.page-banner .section-eyebrow {
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+}
+
+.page-banner-title {
+  font-family: var(--font-serif);
+  font-size: var(--size-2xl);
+  color: white;
+  margin: var(--space-3) 0 var(--space-3);
+  letter-spacing: 0.06em;
+}
+
+.page-banner-desc {
+  font-size: var(--size-md);
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+}
+
+/* ── 共用：section-more 按鈕區 ── */
+.section-more {
+  text-align: center;
+  margin-top: var(--space-10);
+}
+
+/* ── 首頁：消息預覽 ── */
+.section--news-preview {
+  background: var(--bg-page);
+}
+
+.news-skeleton {
+  opacity: 0.4;
+}
+
+.skeleton-line {
+  height: 14px;
+  background: var(--gray-200);
+  border-radius: 4px;
+  margin: var(--space-2) 0;
+}
+
+.news-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: var(--space-10);
+}
+
+/* ── 首頁：活動花絮預覽 ── */
+.section--gallery-preview {
+  background: var(--bg-surface);
+}
+
+.gallery-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.gallery-preview-card {
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: box-shadow var(--transition), transform var(--transition);
+  background: var(--bg-surface);
+}
+
+.gallery-preview-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.gallery-preview-img {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.gallery-preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-preview-card:hover .gallery-preview-img img {
+  transform: scale(1.05);
+}
+
+.gallery-preview-caption {
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.gallery-preview-caption span {
+  font-size: var(--size-sm);
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.gallery-preview-caption small {
+  font-size: var(--size-xs);
+  color: var(--text-muted);
+}
+
+.gallery-preview-placeholder {
+  grid-column: span 4;
+  text-align: center;
+  padding: var(--space-16);
+  color: var(--text-muted);
+  border: 2px dashed var(--gray-200);
+  border-radius: var(--radius-lg);
+}
+
+/* Hero 有照片時文字改白色 */
+.hero--photo .hero-badge {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border-color: rgba(255,255,255,0.3);
+}
+.hero--photo .hero-title,
+.hero--photo .hero-subtitle {
+  color: white;
+}
+.hero--photo .btn--outline {
+  color: white;
+  border-color: rgba(255,255,255,0.7);
+}
+.hero--photo .btn--outline:hover {
+  background: rgba(255,255,255,0.15);
+}
+.hero--photo .hero-scroll-hint span {
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* ── 院區介紹頁 ── */
+.campus-loading,
+.campus-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: var(--space-16);
+}
+
+.campus-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+  padding: var(--space-16) 0;
+}
+
+.campus-block--reverse {
+  direction: rtl;
+}
+
+.campus-block--reverse > * {
+  direction: ltr;
+}
+
+.campus-index {
+  display: inline-block;
+  font-size: var(--size-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  background: var(--color-primary-lt);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 100px;
+  margin-bottom: var(--space-4);
+}
+
+.campus-name {
+  font-family: var(--font-serif);
+  font-size: var(--size-2xl);
+  color: var(--text-main);
+  margin-bottom: var(--space-6);
+}
+
+.campus-intro {
+  font-size: var(--size-md);
+  color: var(--text-sub);
+  line-height: 1.85;
+  margin-bottom: var(--space-8);
+}
+
+.campus-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.campus-contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--size-sm);
+  color: var(--text-sub);
+}
+
+.campus-contact-item a {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.campus-contact-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* 照片格 */
+.campus-photos {
+  display: grid;
+  gap: var(--space-3);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.campus-photos--1 {
+  grid-template-columns: 1fr;
+}
+
+.campus-photos--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.campus-photos--3 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.campus-photos--3 .campus-photo-item:first-child {
+  grid-column: span 2;
+}
+
+.campus-photo-item {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  aspect-ratio: 4/3;
+  background: var(--gray-100);
+}
+
+.campus-photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.campus-photo-item:hover img {
+  transform: scale(1.04);
+}
+
+.campus-photos--placeholder .campus-photo-placeholder {
+  aspect-ratio: 4/3;
+  background: var(--color-primary-lt);
+  border: 2px dashed rgba(59,122,110,0.25);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: var(--size-lg);
+  font-weight: 500;
+  font-family: var(--font-serif);
+  letter-spacing: 0.08em;
+}
+
+.campus-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ── 最新消息頁 ── */
+.news-page-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.news-page-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  margin-bottom: var(--space-6);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.news-page-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.news-page-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.news-page-meta time {
+  font-size: var(--size-sm);
+  color: var(--text-muted);
+}
+
+.news-page-title {
+  font-size: var(--size-lg);
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: var(--space-3);
+}
+
+.news-page-summary {
+  color: var(--text-sub);
+  line-height: 1.8;
+}
+
+.news-page-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.news-page-images img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.news-page-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: var(--space-20);
+  font-size: var(--size-md);
+}
+
+/* ── 活動花絮頁 ── */
+.gallery-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.gallery-album-card {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  background: var(--bg-surface);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.gallery-album-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.gallery-album-cover {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.gallery-album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-album-card:hover .gallery-album-cover img {
+  transform: scale(1.05);
+}
+
+.gallery-album-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-lt);
+  color: var(--color-primary);
+  font-size: var(--size-sm);
+  font-weight: 500;
+}
+
+.gallery-album-info {
+  padding: var(--space-5) var(--space-6);
+}
+
+.gallery-album-title {
+  font-size: var(--size-base);
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: var(--space-1);
+}
+
+.gallery-album-date {
+  font-size: var(--size-sm);
+  color: var(--text-muted);
+}
+
+.gallery-album-desc {
+  font-size: var(--size-sm);
+  color: var(--text-sub);
+  margin-top: var(--space-2);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 燈箱（相簿內頁）*/
+.album-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.album-lightbox.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.album-lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ── 捐款徵信頁 ── */
+.donate-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.donate-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+}
+
+.donate-card-title {
+  font-size: var(--size-lg);
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-primary-lt);
+}
+
+.donate-account-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.donate-account-item:last-child {
+  border-bottom: none;
+}
+
+.donate-account-bank {
+  font-size: var(--size-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-primary-lt);
+  display: inline-block;
+  padding: 2px var(--space-3);
+  border-radius: 100px;
+  width: fit-content;
+}
+
+.donate-account-num {
+  font-size: var(--size-xl);
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.08em;
+}
+
+.donate-account-name {
+  font-size: var(--size-sm);
+  color: var(--text-muted);
+}
+
+.donate-note {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background: var(--color-warm-lt);
+  border-radius: var(--radius-md);
+  font-size: var(--size-sm);
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+/* 徵信報告列表 */
+.donate-reports {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.donate-report-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  background: var(--gray-50);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: background var(--transition);
+}
+
+.donate-report-item:hover {
+  background: var(--color-primary-lt);
+}
+
+.donate-report-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.donate-report-title {
+  font-size: var(--size-base);
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.donate-report-date {
+  font-size: var(--size-xs);
+  color: var(--text-muted);
+}
+
+.donate-report-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--size-sm);
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-primary);
+  border-radius: 100px;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.donate-report-dl:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.donate-reports-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: var(--space-10);
+  font-size: var(--size-sm);
+}
+
+/* ── RWD 補充 ── */
+@media (max-width: 1024px) {
+  .gallery-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-preview-placeholder {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    padding: calc(68px + var(--space-10)) 0 var(--space-10);
+  }
+  .page-banner-title {
+    font-size: var(--size-xl);
+  }
+  .campus-block {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    padding: var(--space-10) 0;
+  }
+  .campus-block--reverse {
+    direction: ltr;
+  }
+  .campus-name {
+    font-size: var(--size-xl);
+  }
+  .gallery-page-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .donate-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
