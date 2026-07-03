@@ -294,24 +294,20 @@ p {
   text-decoration: none;
 }
 
-.logo-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
+.logo::before {
+  content: "";
+  width: 4px;
+  height: 1.4em;
   background: var(--color-primary);
-  color: white;
-  font-size: 14px;
-  font-weight: 700;
-  border-radius: var(--radius-sm);
+  border-radius: 2px;
   flex-shrink: 0;
-  letter-spacing: 0.02em;
 }
 
 .logo-text {
+  font-family: var(--font-serif);
   font-size: var(--size-md);
   font-weight: 700;
+  letter-spacing: 0.06em;
   color: var(--text-main);
 }
 
@@ -1024,9 +1020,8 @@ p {
   gap: var(--space-2);
 }
 
-.site-footer .logo-mark {
-  background: rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.8);
+.site-footer .logo::before {
+  background: rgba(255,255,255,0.35);
 }
 
 .site-footer .logo-text {
