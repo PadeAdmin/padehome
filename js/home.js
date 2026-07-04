@@ -73,7 +73,7 @@ async function loadNewsPreview() {
         </div>
         <div class="news-body">
           <h3>${item.title}</h3>
-          <p>${item.summary || ''}</p>
+          <p>${truncate(item.summary, 60)}</p>
         </div>
         <div class="news-arrow" aria-hidden="true">→</div>
       </article>
@@ -113,6 +113,12 @@ async function loadGalleryPreview() {
       </a>
     `).join('');
   } catch (e) { /* 維持佔位文字 */ }
+}
+
+function truncate(text, maxLen) {
+  if (!text) return '';
+  const clean = String(text).replace(/\s+/g, ' ').trim();
+  return clean.length > maxLen ? clean.slice(0, maxLen) + '…' : clean;
 }
 
 function formatDate(dateStr) {
