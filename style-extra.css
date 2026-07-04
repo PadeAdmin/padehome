@@ -406,6 +406,59 @@
   object-fit: contain;
 }
 
+.news-page-image-clickable {
+  cursor: zoom-in;
+  transition: transform var(--transition);
+}
+
+.news-page-image-clickable:hover {
+  transform: scale(1.03);
+}
+
+/* ── 圖片放大預覽（Lightbox） ── */
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: rgba(20, 25, 22, 0.9);
+}
+
+.img-lightbox.is-open {
+  display: flex;
+}
+
+.img-lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.img-lightbox-close {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.img-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .news-page-empty {
   text-align: center;
   color: var(--text-muted);
