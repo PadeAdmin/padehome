@@ -1,0 +1,8 @@
+# 舊網址 301 轉址到新的網址結構（SEO 用）
+/campus.html      /campuses   301
+/campus           /campuses   301
+/gallery.html     /activities 301
+/gallery          /activities 301
+/donate.html      /donation   301
+/donate           /donation   301
+/index.html       /           301

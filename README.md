@@ -6,6 +6,27 @@
 
 ---
 
+## 網址結構（SEO 乾淨網址）
+
+| 路徑 | 對應檔案 | 頁面 |
+|---|---|---|
+| `/` | `index.html` | 首頁 |
+| `/about` | `about.html` | 關於我們 |
+| `/services` | `services.html` | 服務內容 |
+| `/campuses` | `campuses.html` | 院區介紹 |
+| `/news` | `news.html` | 最新消息 |
+| `/activities` | `activities.html` | 活動花絮 |
+| `/donation` | `donation.html` | 捐款徵信 |
+| `/contact` | `contact.html` | 聯絡我們 |
+
+Cloudflare Pages 預設會把 `xxx.html` 用 `/xxx` 的乾淨網址提供，所以站內連結一律用不帶 `.html` 的路徑（例如 `href="/about"`）。舊網址（`campus.html`、`gallery.html`、`donate.html`、`index.html` 等）已透過 `_redirects` 設定 301 轉址到新網址，避免舊連結或 Google 收錄失效。
+
+新增了 `sitemap.xml`、`robots.txt`、`_redirects`，以及各頁 `<link rel="canonical">`，方便 Google 收錄並避免重複內容問題。
+
+首頁的「關於我們」「服務內容」現在只放**精簡摘要**（完整內容在 `/about`、`/services`），「聯絡我們」完整內容也搬到 `/contact`（首頁不再重複顯示，footer 仍保留基本聯絡資訊）。
+
+---
+
 ## 檔案結構
 
 ```
@@ -14,25 +35,30 @@ padehome-main/
 │   ├── index.html      # Sveltia CMS 後台入口（pade.org.tw/admin）
 │   └── config.yml      # CMS 欄位定義（決定後台看到哪些欄位）
 ├── data/                # CMS 編輯的內容都存在這裡（JSON）
-│   ├── site.json        # 網站基本資料（首頁大圖、簡介、聯絡資訊）
-│   ├── news.json         # 最新消息
-│   ├── gallery.json      # 活動花絮相簿
-│   ├── campus.json       # 院區介紹（建國院區／永豐院區）
-│   └── donate.json       # 捐款帳號＋徵信公告
+│   ├── site.json         # 網站基本資料（首頁大圖、簡介、聯絡資訊）
+│   ├── news.json          # 最新消息
+│   ├── gallery.json       # 活動花絮相簿
+│   ├── campus.json        # 院區介紹（建國院區／永豐院區）
+│   └── donate.json        # 捐款帳號＋徵信公告
 ├── images/uploads/      # CMS 上傳的圖片／PDF 都放這裡
 ├── js/
-│   ├── home.js           # 首頁：讀 site.json / news.json / gallery.json
-│   ├── news.js           # 最新消息頁：讀 news.json
-│   ├── gallery.js        # 活動花絮頁：讀 gallery.json
-│   ├── campus.js         # 院區介紹頁：讀 campus.json
-│   └── donate.js         # 捐款徵信頁：讀 donate.json
-├── index.html / news.html / gallery.html / campus.html / donate.html
+│   ├── home.js            # 首頁：讀 site.json / news.json / gallery.json（about.html、contact.html 也共用）
+│   ├── news.js             # 最新消息頁：讀 news.json
+│   ├── gallery.js          # 活動花絮頁：讀 gallery.json
+│   ├── campus.js           # 院區介紹頁：讀 campus.json
+│   └── donate.js           # 捐款徵信頁：讀 donate.json
+├── index.html / about.html / services.html / campuses.html
+├── news.html / activities.html / donation.html / contact.html
 ├── style.css            # 全站主要樣式
-├── style-extra.css       # 各子頁面（消息／花絮／院區／捐款）樣式
+├── style-extra.css       # 各子頁面樣式
 ├── gallery-fix.css       # 活動花絮版面微調
 ├── script.js             # 導覽列、選單等共用互動行為
+├── _redirects            # Cloudflare Pages 舊網址 301 轉址
+├── sitemap.xml / robots.txt
 └── README.md
 ```
+
+> 注意：`js/`、`data/` 底下的檔名（`campus.js`、`campus.json`、`gallery.js`、`donate.js` 等）維持舊名沒有跟著網址改，純粹是內部檔案，不影響對外網址，避免不必要的改動風險。
 
 ---
 

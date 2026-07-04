@@ -66,7 +66,7 @@ async function loadNewsPreview() {
       return;
     }
     container.innerHTML = items.map(item => `
-      <article class="news-item" onclick="location.href='news.html'" style="cursor:pointer">
+      <article class="news-item" onclick="location.href='/news'" style="cursor:pointer">
         <div class="news-meta">
           <time datetime="${item.date}">${formatDate(item.date)}</time>
           <span class="news-tag">${item.tag || '公告'}</span>
@@ -102,7 +102,7 @@ async function loadGalleryPreview() {
     if (items.length === 0) return;
 
     container.innerHTML = items.map(album => `
-      <a href="gallery.html" class="gallery-preview-card">
+      <a href="/activities" class="gallery-preview-card">
         <div class="gallery-preview-img">
           <img src="${album.cover}" alt="${album.title}" loading="lazy" />
         </div>
