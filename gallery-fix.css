@@ -258,3 +258,24 @@
   .lightbox-nav { width: 40px; height: 40px; font-size: 24px; }
   .album-lightbox img { max-width: 96vw; }
 }
+
+/* ── 院區照片：4、5 張版型 + 可點擊 ── */
+.campus-photo-item[data-campus] {
+  cursor: pointer;
+}
+
+.campus-photos--4 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.campus-photos--4 .campus-photo-item:first-child {
+  grid-column: span 3;
+}
+
+.campus-photos--5 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.campus-photos--5 .campus-photo-item:first-child {
+  grid-column: span 2;
+}
