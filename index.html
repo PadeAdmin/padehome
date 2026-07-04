@@ -81,6 +81,46 @@
       </div>
     </section>
 
+    <!-- ── 最新消息預覽 ── -->
+    <section class="section section--news-preview" id="news-preview" aria-labelledby="news-preview-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-eyebrow">最新消息</span>
+          <h2 id="news-preview-heading">院內動態</h2>
+        </div>
+        <div class="news-list fade-in" id="news-preview-list">
+          <!-- 由 JS 從 data/news/ 動態載入最新3則 -->
+          <article class="news-item news-skeleton">
+            <div class="news-meta"><div class="skeleton-line" style="width:60px"></div></div>
+            <div class="news-body"><div class="skeleton-line" style="width:80%"></div></div>
+          </article>
+        </div>
+        <div class="section-more fade-in">
+          <a href="/news" class="btn btn--outline">查看所有消息 →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 活動花絮預覽 ── -->
+    <section class="section section--gallery-preview" id="gallery-preview" aria-labelledby="gallery-preview-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-eyebrow">活動花絮</span>
+          <h2 id="gallery-preview-heading">近期活動紀錄</h2>
+          <p class="section-desc">記錄每一個精彩時刻，感謝所有參與的服務對象與工作夥伴。</p>
+        </div>
+        <div class="gallery-preview-grid fade-in" id="gallery-preview-grid">
+          <!-- 由 JS 動態載入最新相簿封面 -->
+          <div class="gallery-preview-placeholder">
+            <span>活動照片更新中</span>
+          </div>
+        </div>
+        <div class="section-more fade-in">
+          <a href="/activities" class="btn btn--outline">查看更多活動 →</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ── 關於我們（首頁摘要） ── -->
     <section class="section section--about" aria-labelledby="about-heading">
       <div class="container">
@@ -160,45 +200,6 @@
       </div>
     </section>
 
-    <!-- ── 最新消息預覽 ── -->
-    <section class="section section--news-preview" id="news-preview" aria-labelledby="news-preview-heading">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-eyebrow">最新消息</span>
-          <h2 id="news-preview-heading">院內動態</h2>
-        </div>
-        <div class="news-list fade-in" id="news-preview-list">
-          <!-- 由 JS 從 data/news/ 動態載入最新3則 -->
-          <article class="news-item news-skeleton">
-            <div class="news-meta"><div class="skeleton-line" style="width:60px"></div></div>
-            <div class="news-body"><div class="skeleton-line" style="width:80%"></div></div>
-          </article>
-        </div>
-        <div class="section-more fade-in">
-          <a href="/news" class="btn btn--outline">查看所有消息 →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── 活動花絮預覽 ── -->
-    <section class="section section--gallery-preview" id="gallery-preview" aria-labelledby="gallery-preview-heading">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-eyebrow">活動花絮</span>
-          <h2 id="gallery-preview-heading">近期活動紀錄</h2>
-          <p class="section-desc">記錄每一個精彩時刻，感謝所有參與的服務對象與工作夥伴。</p>
-        </div>
-        <div class="gallery-preview-grid fade-in" id="gallery-preview-grid">
-          <!-- 由 JS 動態載入最新相簿封面 -->
-          <div class="gallery-preview-placeholder">
-            <span>活動照片更新中</span>
-          </div>
-        </div>
-        <div class="section-more fade-in">
-          <a href="/activities" class="btn btn--outline">查看更多活動 →</a>
-        </div>
-      </div>
-    </section>
 
   </main>
 
