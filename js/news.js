@@ -40,7 +40,7 @@ async function loadNews() {
           <div class="news-page-images">
             ${item.images.map(img => `
               <div class="news-page-image">
-                <img src="${img.image || img}" alt="${escapeHtml(item.title)}" loading="lazy" />
+                <img src="${img.image || img}" alt="${escapeHtml(item.title)}" loading="lazy" class="news-page-image-clickable" />
               </div>
             `).join('')}
           </div>` : '';
@@ -63,10 +63,50 @@ async function loadNews() {
   }
 }
 
+function initLightbox() {
+  if (document.getElementById('img-lightbox')) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'img-lightbox';
+  overlay.className = 'img-lightbox';
+  overlay.innerHTML = `
+    <button class="img-lightbox-close" aria-label="關閉">&times;</button>
+    <img src="" alt="" />
+  `;
+  document.body.appendChild(overlay);
+
+  const closeLightbox = () => {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.classList.contains('img-lightbox-close')) {
+      closeLightbox();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest('.news-page-image-clickable');
+    if (!target) return;
+    const img = overlay.querySelector('img');
+    img.src = target.src;
+    img.alt = target.alt;
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
 function formatDate(dateStr) {
   if (!dateStr) return '';
   const d = new Date(dateStr);
   return `${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日`;
 }
 
-document.addEventListener('DOMContentLoaded', loadNews);
+document.addEventListener('DOMContentLoaded', () => {
+  loadNews();
+  initLightbox();
+});
