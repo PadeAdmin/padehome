@@ -845,4 +845,21 @@
     grid-template-columns: 1fr;
     gap: var(--space-8);
   }
+  .news-page-item {
+    padding: var(--space-5);
+  }
+  .news-page-title {
+    font-size: var(--size-md);
+  }
+  .news-page-images {
+    flex-direction: column;
+  }
+  .news-page-image {
+    flex-basis: auto;
+    width: 100%;
+    max-height: none;
+  }
+  .news-page-images img {
+    max-height: none;
+  }
 }
