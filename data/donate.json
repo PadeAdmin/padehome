@@ -13,14 +13,9 @@
   ],
   "reports": [
     {
-      "title": "2026/06建國院區捐物",
+      "title": "2026/06建國院區捐款、捐物",
       "date": "2026-07-14",
-      "file": "/images/uploads/115年6月建國捐物.pdf"
-    },
-    {
-      "title": "2026/06建國院區捐款",
-      "date": "2026-07-14",
-      "file": "/images/uploads/115年6月建國捐款.pdf"
+      "file": "/images/uploads/115年6月建國捐款、捐物.pdf"
     },
     {
       "title": "2026/06永豐院區捐款、捐物",
@@ -28,18 +23,13 @@
       "file": "/images/uploads/115年6月公開徵信錄捐款捐物.pdf"
     },
     {
-      "title": "2026/05建國院區捐物",
-      "date": "2026-07-03",
-      "file": "/images/uploads/115年建國5月份捐物.pdf"
-    },
-    {
-      "title": "2026/05建國院區捐款",
-      "date": "2026-07-03",
-      "file": "/images/uploads/115年建國5月份捐款.pdf"
+      "title": "2026/05建國院區捐款、捐物",
+      "date": "2026-07-13",
+      "file": "/images/uploads/115年建國5月份捐款、捐物.pdf"
     },
     {
       "title": "2026/05永豐院區捐款、捐物",
-      "date": "2026-07-14",
+      "date": "2026-07-13",
       "file": "/images/uploads/115年5月公開徵信錄捐款捐物.pdf"
     }
   ]
